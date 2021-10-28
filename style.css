@@ -1,0 +1,278 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-container {
+    min-height: 100vh;
+    width: 100%;
+    /*background-image: linear-gradient(130deg, #6fb8d5 0%, #2852b4 75%);*/
+    /*background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);*/
+    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    
+    transform-style: preserve-3d;
+    overflow-x: hidden;
+    
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4rem;
+    z-index: 20;
+    /*background-color: red;*/
+}
+
+.menu {
+    max-width: 75rem;
+    width: 100%;
+    padding: 0 2rem;
+    margin: 0 auto;
+    color: rgb(170, 103, 214);
+
+
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 1rem;
+    cursor: pointer;
+    line-height: 1.1rem;
+}
+
+.logo>span {
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.hamburger-menu{
+    height: 4rem;
+    width: 4rem;
+    cursor: pointer;
+    /*background-color: indigo;*/
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bar {
+    width: 2rem;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #ccc;
+    position: relative;
+    transition: all .5s;
+}
+
+.bar::before,
+.bar::after {
+    content: "";
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background-color: #ccc;
+    transition: all .2s;
+
+}
+
+.bar::before {
+    transform: translateY(-10px);
+
+}
+
+.bar::after {
+    transform: translateY(10px);
+    
+}
+
+.main {
+    position: relative;
+    width: 100%;
+    left: 0;
+    z-index: 10;
+    /*background-color: #fff;*/
+    overflow: hidden;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transition: all .5s;
+}
+
+header {
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(imagem/pink-blue-purple-abstract.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 50%;
+    position: relative;
+}
+
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(20, 55, 55, 0.7);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.inner {
+    max-width: 50rem;
+    text-align: center;
+    color: rgb(241, 238, 238);
+    padding: 0 2rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: goldenrod;
+
+}
+
+/*.btn {
+    margin-top: 3rem;
+    padding: 1rem 2rem;*/
+    /*background-color: goldenrod;*/
+    /*border: none;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+}*/
+.btn {
+    background: linear-gradient(-45deg, #3f00b5, #9f69fe, #27c8b7, #3f00b5);
+    background-size: 800% 400%;
+    padding: 1em 2em;
+    display: inline-block;
+    border: none;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 700;
+    color: white;
+    transition: all .5s ease-in-out;
+    animation: gradient 10s infinite cubic-bezier(.62, .28, .23, .99) both;
+   }
+   
+   .btn:hover {
+    animation: gradient 3s infinite;
+    transform: scale(1.05);
+   }
+   
+   .btn:active {
+    animation: gradient 3s infinite;
+    transform: scale(0.8);
+   }
+   
+   @keyframes gradient {
+    0% {
+     background-position: 0% 50%;
+    }
+   
+    50% {
+     background-position: 100% 50%;
+    }
+   
+    100% {
+     background-position: 0% 50%;
+    }
+   }
+
+.main-container.active .bar {
+
+    transform: rotate(360deg);
+    background-color: transparent;
+}
+
+.main-container.active .bar::before {
+    transform: translateY(0) rotate(45deg);
+}
+
+.main-container.active .bar::after {
+    transform: translateY(0) rotate(-45deg);
+}
+
+.main-container.active .main {
+    transform: perspective(1300px) rotateY(20deg) translateZ(300px) scale(0.5);
+    animation: page-animation .5s ease;
+}
+
+@keyframes page-animation {
+    0%{
+        transform: translate(0);
+    }
+    100%{
+        transform: perspective(1300px) rotateY(20deg) translateZ(300px) scale(0.5);
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
